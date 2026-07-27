@@ -23,7 +23,7 @@ const updates = [
     start: date,
     end: date,
     notes:
-      "Stack ditetapkan: Next.js 16 App Router, React 19, TypeScript, Tailwind CSS v4, pnpm, dan Vercel. Data v1 statis; payment/auth ditunda sampai kebutuhan produk final. Keputusan terdokumentasi di Projects/kitalab/docs/SPRINT-0.md.",
+      "Stack ditetapkan: Next.js 16 App Router, React 19, TypeScript, Tailwind CSS v4, pnpm, dan Hostinger Node.js Web App. Data v1 statis; payment/auth ditunda sampai kebutuhan produk final. Keputusan terdokumentasi di Projects/kitalab/docs/SPRINT-0.md.",
   },
   {
     row: 5,
@@ -39,7 +39,7 @@ const updates = [
     start: date,
     end: null,
     notes:
-      "Proyek sudah deployment-ready dan repository GitHub sudah terhubung. Preview lokal aktif. Koneksi repository ke Vercel dan URL live masih memerlukan tindakan/otorisasi akun hosting user.",
+      "Proyek sudah deployment-ready untuk Hostinger Node.js Web App dan repository GitHub sudah terhubung. Runtime Node.js 22.x, pnpm, build/start command, dan panduan hPanel disiapkan. Koneksi repository di hPanel serta URL live memerlukan otorisasi akun hosting user.",
   },
   {
     row: 7,

@@ -7,7 +7,7 @@ Tanggal: 27 Juli 2026
 - Frontend: Next.js 16 App Router, React 19, TypeScript.
 - Styling: Tailwind CSS v4 dengan CSS custom properties sebagai design tokens.
 - Package manager: pnpm.
-- Hosting: Vercel melalui Git integration.
+- Hosting: Hostinger Node.js Web App melalui GitHub integration.
 - Data v1: konten landing page statis di repository; database belum diperlukan.
 - Payment: belum diimplementasikan. Kandidat awal adalah Midtrans sandbox, tetapi keputusan final menunggu skema produk/langganan dan persetujuan user.
 - Auth: tidak dipasang pada fondasi landing page; baru diperlukan bila produk SaaS memiliki member area.
@@ -40,18 +40,18 @@ Semua warna tersedia sebagai token di `src/app/globals.css`, sehingga dapat diga
 
 ## Deployment
 
-Repository sudah deployment-ready untuk Vercel. Langkah eksternal yang masih dibutuhkan:
+Repository sudah deployment-ready untuk Hostinger. Langkah eksternal yang masih dibutuhkan:
 
-1. Push folder proyek ini ke GitHub/GitLab/Bitbucket.
-2. Di Vercel pilih **New Project**, import repository, dan pilih root directory `Projects/kitalab` bila repository memakai workspace induk.
-3. Framework preset akan terdeteksi sebagai Next.js; deploy tanpa environment variable untuk fondasi ini.
-4. Gunakan branch `main` sebagai production dan pull request untuk preview deployment.
+1. Di hPanel pilih **Websites → Add website → Node.js Web App**.
+2. Import repository `KitaLab-Git/LandingPage-KitaLab` dan branch `main`.
+3. Pilih Next.js, Node.js 22.x, pnpm, build command `pnpm build`, dan start command `pnpm start`.
+4. Aktifkan automatic redeployment dari branch `main`.
 
-Live deployment belum dilakukan karena sesi ini tidak memiliki akun/repository tujuan dan tindakan tersebut memerlukan otorisasi user.
+Detail pengaturan tersedia di `docs/HOSTINGER-DEPLOYMENT.md`.
 
 ## Handoff untuk Worksheet Master
 
 - Task 1: selesai — stack dipilih dan terdokumentasi.
 - Task 2: selesai — proyek dan struktur folder dibuat.
-- Task 3: blocked eksternal — konfigurasi lokal siap, tetapi koneksi repository dan Vercel memerlukan akun user.
+- Task 3: proses — konfigurasi lokal siap, tetapi koneksi repository ke hPanel Hostinger memerlukan akun user.
 - Task 4: proses — token branding baseline sudah diterapkan; logo dan approval final palet/tone masih memerlukan keputusan tim Kita Lab.
