@@ -4,6 +4,7 @@
   --brand-navy: #07223d;
   --brand-blue: #0e4d7a;
   --brand-accent: #f28c28;
+  --brand-accent-strong: #c96610;
   --brand-accent-soft: #fff1df;
   --brand-canvas: #f5f8fb;
   --brand-ink: #102334;
@@ -19,6 +20,7 @@
   --color-brand-navy: var(--brand-navy);
   --color-brand-blue: var(--brand-blue);
   --color-brand-accent: var(--brand-accent);
+  --color-brand-accent-strong: var(--brand-accent-strong);
   --color-brand-accent-soft: var(--brand-accent-soft);
   --color-brand-canvas: var(--brand-canvas);
   --color-brand-ink: var(--brand-ink);
@@ -34,6 +36,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
@@ -47,4 +50,32 @@ body {
 ::selection {
   background: var(--brand-accent-soft);
   color: var(--brand-navy);
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.section-space {
+  padding-block: clamp(5rem, 9vw, 7.5rem);
+}
+
+.hero-glow {
+  position: absolute;
+  inset: -20% -15% auto auto;
+  width: min(48rem, 72vw);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgb(14 77 122 / 55%) 0%, transparent 68%);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
