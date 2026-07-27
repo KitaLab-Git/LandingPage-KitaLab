@@ -12,7 +12,7 @@ Gunakan Business Web Hosting atau paket Cloud yang mendukung Node.js Web App. Un
 - Production branch: `main`
 - Framework: Next.js
 - Node.js: 22.x
-- Package manager: pnpm
+- Package manager: pnpm 11.17.0
 - Install command: `pnpm install --frozen-lockfile`
 - Build command: `pnpm build`
 - Start command: `pnpm start`
