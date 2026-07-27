@@ -9,7 +9,7 @@ const sourcePath = path.join(
   "documents",
   "Worksheet_Master_KitaLab.xlsx",
 );
-const outputDir = path.join(projectRoot, "outputs", "wm-sprint-4-5");
+const outputDir = path.join(projectRoot, "outputs", "wm-sprint-6");
 const outputPath = path.join(outputDir, "Worksheet_Master_KitaLab.xlsx");
 
 const workbook = await SpreadsheetFile.importXlsx(await FileBlob.load(sourcePath));
@@ -209,6 +209,22 @@ const updates = [
     notes:
       "Komponen Google Analytics 4 dan contoh NEXT_PUBLIC_GA_ID sudah tersedia. Tracking sengaja belum aktif agar tidak mengirim ID placeholder; diperlukan Measurement ID GA4 resmi di environment Hostinger lalu deploy ulang.",
   },
+  {
+    row: 28,
+    status: "Selesai",
+    start: date,
+    end: date,
+    notes:
+      "Responsive design seluruh route disempurnakan untuk layar kecil, tablet, dan desktop: skala heading adaptif, CTA mobile penuh, mockup aman dari overflow, checkout/footer fleksibel, target sentuh 44–48 px, skip navigation, serta focus indicator keyboard.",
+  },
+  {
+    row: 29,
+    status: "Selesai",
+    start: date,
+    end: date,
+    notes:
+      "Performa dioptimalkan tanpa dependency baru: content-visibility untuk section bawah viewport, compression, cache immutable social preview, AVIF/WebP readiness, tanpa gambar konten berat, dan analytics conditional. Build 13 route lulus; static assets 718 KB, terbesar 226 KB.",
+  },
 ];
 
 for (const update of updates) {
@@ -216,7 +232,7 @@ for (const update of updates) {
     [update.status, "Codex", update.start, update.end, update.notes],
   ];
 }
-sheet.getRange("K4:L27").format.numberFormat = "yyyy-mm-dd";
+sheet.getRange("K4:L29").format.numberFormat = "yyyy-mm-dd";
 
 await fs.mkdir(outputDir, { recursive: true });
 const exported = await SpreadsheetFile.exportXlsx(workbook);
@@ -224,9 +240,9 @@ await exported.save(outputPath);
 
 const check = await workbook.inspect({
   kind: "table",
-  range: "Worksheet Master!A3:M27",
+  range: "Worksheet Master!A3:M29",
   include: "values,formulas",
-  tableMaxRows: 25,
+  tableMaxRows: 27,
   tableMaxCols: 13,
   tableMaxCellChars: 220,
   maxChars: 14000,

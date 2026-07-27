@@ -17,17 +17,17 @@ export default async function CheckoutPage({
   if (!product) notFound();
 
   return (
-    <main className="min-h-screen bg-brand-canvas py-10">
+    <main className="min-h-screen bg-brand-canvas py-8 sm:py-10" id="main-content">
       <Container className="max-w-5xl">
         <Link className="font-black tracking-[-0.04em] text-brand-navy" href="/">
           Kita<span className="text-brand-accent">Lab.</span>
         </Link>
-        <div className="mt-10 grid overflow-hidden rounded-[2rem] border border-brand-line bg-white shadow-xl lg:grid-cols-2">
+        <div className="mt-8 grid overflow-hidden rounded-[1.5rem] border border-brand-line bg-white shadow-xl sm:mt-10 sm:rounded-[2rem] lg:grid-cols-2">
           <section className="bg-brand-navy p-8 text-white sm:p-10">
             <span className="text-xs font-black uppercase tracking-widest text-brand-accent">
               Checkout sandbox
             </span>
-            <h1 className="mt-6 text-4xl font-black tracking-[-0.04em]">
+            <h1 className="mt-6 text-3xl font-black tracking-[-0.04em] sm:text-4xl">
               {product.name}
             </h1>
             <p className="mt-4 leading-7 text-white/65">{product.description}</p>

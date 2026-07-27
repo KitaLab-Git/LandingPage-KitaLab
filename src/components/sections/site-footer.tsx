@@ -27,7 +27,7 @@ export function SiteFooter() {
           </div>
           <div>
             <p className="text-xs font-black uppercase tracking-wider text-white">Kontak</p>
-            <a className="mt-4 block text-sm transition hover:text-white" href="mailto:halo@kitalab.online">
+            <a className="mt-4 block break-all text-sm transition hover:text-white" href="mailto:halo@kitalab.online">
               halo@kitalab.online
             </a>
             <p className="mt-2 text-sm">Makassar, Sulawesi Selatan</p>

@@ -18,7 +18,7 @@ function Hero() {
             <span className="size-2 rounded-full bg-brand-accent" />
             Tim developer lokal Makassar
           </div>
-          <h1 className="max-w-3xl text-balance text-5xl font-black leading-[0.98] tracking-[-0.055em] sm:text-6xl lg:text-7xl">
+          <h1 className="max-w-3xl text-balance text-4xl font-black leading-[1.02] tracking-[-0.05em] min-[380px]:text-5xl sm:text-6xl sm:leading-[0.98] lg:text-7xl">
             Solusi digital yang bikin bisnis lebih{" "}
             <span className="text-brand-accent">mudah bertumbuh.</span>
           </h1>
@@ -44,7 +44,7 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-lg">
+        <div className="relative mx-auto w-full max-w-lg px-1 sm:px-0">
           <div className="rounded-[2rem] border border-white/12 bg-white/8 p-4 shadow-2xl backdrop-blur-sm">
             <div className="rounded-[1.4rem] bg-white p-5 text-brand-ink">
               <div className="mb-5 flex items-center justify-between border-b border-brand-line pb-4">
@@ -84,7 +84,7 @@ function Hero() {
               </div>
             </div>
           </div>
-          <div className="absolute -bottom-6 -left-5 rounded-2xl bg-brand-accent px-5 py-4 text-brand-navy shadow-xl">
+          <div className="absolute -bottom-6 left-2 rounded-2xl bg-brand-accent px-5 py-4 text-brand-navy shadow-xl sm:-left-5">
             <strong className="block text-xl">Dekat.</strong>
             <span className="text-xs font-bold">Cepat komunikasi.</span>
           </div>
@@ -263,7 +263,7 @@ function Products() {
                   </li>
                 ))}
               </ul>
-              <Button className="mt-8" href={`/product/${product.slug}`} variant={index === 0 ? "primary" : "secondary"}>
+              <Button className="mt-8 w-full sm:w-auto" href={`/product/${product.slug}`} variant={index === 0 ? "primary" : "secondary"}>
                 Coba Gratis {product.trial} →
               </Button>
             </Card>
@@ -287,7 +287,7 @@ function Portfolio() {
           {portfolio.map((item, index) => (
             <article className="group" key={item.title}>
               <div
-                className={`aspect-[4/3] rounded-[1.75rem] p-5 ${
+                className={`aspect-[4/3] rounded-[1.5rem] p-4 sm:rounded-[1.75rem] sm:p-5 ${
                   item.accent === "orange" ? "bg-brand-accent" : "bg-brand-navy"
                 }`}
               >
@@ -295,7 +295,7 @@ function Portfolio() {
                   <span className="text-xs font-bold uppercase tracking-widest text-white/55">
                     Konsep 0{index + 1} · {item.category}
                   </span>
-                  <div className="grid grid-cols-[.7fr_1.3fr] gap-3 transition duration-300 group-hover:-translate-y-1">
+                  <div className="grid grid-cols-[.8fr_1.2fr] gap-2 transition duration-300 group-hover:-translate-y-1 sm:gap-3">
                     <div className="space-y-2 rounded-xl bg-white/10 p-3">
                       <div className="h-2 w-2/3 rounded bg-white/70" />
                       <div className="h-2 w-full rounded bg-white/20" />

@@ -22,7 +22,10 @@ export default async function CheckoutStatusPage({
   const product = getProduct(productSlug);
 
   return (
-    <main className="grid min-h-screen place-items-center bg-brand-canvas px-5 py-12">
+    <main
+      className="grid min-h-screen place-items-center bg-brand-canvas px-5 py-12"
+      id="main-content"
+    >
       <Container className="max-w-xl">
         <section className="rounded-[2rem] border border-brand-line bg-white p-8 shadow-xl sm:p-12">
           <PaymentStatusPanel

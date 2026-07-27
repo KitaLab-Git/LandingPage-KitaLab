@@ -37,6 +37,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
+  overflow-x: clip;
 }
 
 body {
@@ -45,6 +46,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   text-rendering: optimizeLegibility;
+  overflow-wrap: break-word;
 }
 
 ::selection {
@@ -55,6 +57,29 @@ body {
 a,
 button {
   -webkit-tap-highlight-color: transparent;
+}
+
+:where(a, button, input, textarea, summary):focus-visible {
+  outline: 3px solid var(--brand-accent);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 0.75rem;
+  left: 0.75rem;
+  translate: 0 -200%;
+  border-radius: 999px;
+  background: var(--brand-accent);
+  color: var(--brand-navy);
+  padding: 0.75rem 1rem;
+  font-weight: 800;
+  transition: translate 160ms ease;
+}
+
+.skip-link:focus {
+  translate: 0;
 }
 
 .mobile-menu > summary::-webkit-details-marker {
@@ -68,6 +93,14 @@ button {
 
 .section-space {
   padding-block: clamp(5rem, 9vw, 7.5rem);
+  content-visibility: auto;
+  contain-intrinsic-size: auto 720px;
+}
+
+@media (max-width: 639px) {
+  .section-space {
+    padding-block: 4.5rem;
+  }
 }
 
 .hero-glow {

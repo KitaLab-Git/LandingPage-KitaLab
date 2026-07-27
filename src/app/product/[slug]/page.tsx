@@ -17,7 +17,7 @@ export default async function ProductDetailPage({
   if (!product) notFound();
 
   return (
-    <main className="min-h-screen bg-brand-canvas">
+    <main className="min-h-screen bg-brand-canvas" id="main-content">
       <Container className="py-8">
         <Link className="font-black tracking-[-0.04em] text-brand-navy" href="/">
           Kita<span className="text-brand-accent">Lab.</span>
@@ -28,7 +28,7 @@ export default async function ProductDetailPage({
           <span className="rounded-full bg-brand-accent-soft px-4 py-2 text-xs font-black uppercase tracking-wider text-brand-accent-strong">
             {product.label}
           </span>
-          <h1 className="mt-7 text-5xl font-black tracking-[-0.055em] text-brand-navy sm:text-6xl">
+          <h1 className="mt-7 text-4xl font-black tracking-[-0.055em] text-brand-navy sm:text-6xl">
             {product.name}
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-brand-muted">

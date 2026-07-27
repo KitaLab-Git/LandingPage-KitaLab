@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/sections/site-header";
 
 export default function Home() {
   return (
-    <main>
+    <main id="main-content">
       <SiteHeader />
       <LandingWireframe />
       <SiteFooter />
