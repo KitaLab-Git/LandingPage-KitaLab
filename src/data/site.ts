@@ -71,7 +71,46 @@ export function getProduct(slug: string) {
 }
 
 export const portfolio = [
-  "Sistem operasional UMKM",
-  "Website profil usaha lokal",
-  "Dashboard pencatatan bisnis",
+  {
+    category: "Operasional",
+    title: "Dashboard Penjualan UMKM",
+    description:
+      "Konsep dashboard untuk merangkum transaksi, omzet, dan produk terlaris dalam tampilan yang mudah dipahami.",
+    outcome: "Ringkasan harian dalam satu layar",
+    accent: "blue",
+  },
+  {
+    category: "Branding",
+    title: "Website Profil Usaha Lokal",
+    description:
+      "Konsep company profile yang membantu calon pelanggan memahami layanan dan menghubungi bisnis lebih cepat.",
+    outcome: "Jalur kontak lebih jelas",
+    accent: "orange",
+  },
+  {
+    category: "Inventori",
+    title: "Sistem Monitoring Stok",
+    description:
+      "Konsep alat operasional untuk melihat barang masuk, keluar, dan stok menipis tanpa spreadsheet berulang.",
+    outcome: "Kontrol persediaan lebih praktis",
+    accent: "navy",
+  },
+];
+
+export const teamRoles = [
+  {
+    initials: "PD",
+    role: "Product & Discovery",
+    description: "Menerjemahkan masalah bisnis menjadi kebutuhan yang terukur.",
+  },
+  {
+    initials: "EN",
+    role: "Engineering",
+    description: "Membangun solusi yang stabil, aman, dan mudah dikembangkan.",
+  },
+  {
+    initials: "CX",
+    role: "Client Experience",
+    description: "Menjaga komunikasi, onboarding, dan pendampingan tetap jelas.",
+  },
 ];

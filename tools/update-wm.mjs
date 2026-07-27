@@ -9,7 +9,7 @@ const sourcePath = path.join(
   "documents",
   "Worksheet_Master_KitaLab.xlsx",
 );
-const outputDir = path.join(projectRoot, "outputs", "wm-sprint-3");
+const outputDir = path.join(projectRoot, "outputs", "wm-sprint-4-5");
 const outputPath = path.join(outputDir, "Worksheet_Master_KitaLab.xlsx");
 
 const workbook = await SpreadsheetFile.importXlsx(await FileBlob.load(sourcePath));
@@ -153,6 +153,62 @@ const updates = [
     notes:
       "Halaman status transaksi selesai untuk pending, success, dan failed, termasuk aksi simulasi callback serta langkah berikutnya. E2E lokal terverifikasi: halaman 200, checkout pending, callback success, dan access active.",
   },
+  {
+    row: 21,
+    status: "Selesai",
+    start: date,
+    end: date,
+    notes:
+      "Section Portofolio selesai dengan tiga konsep kapabilitas: dashboard penjualan, website profil usaha, dan monitoring stok. Seluruhnya diberi label jelas sebagai konsep, bukan klaim project klien, sampai screenshot dan materi resmi tersedia.",
+  },
+  {
+    row: 22,
+    status: "Selesai",
+    start: date,
+    end: date,
+    notes:
+      "Section Testimoni selesai tanpa kutipan fiktif. UI menjelaskan bahwa publikasi menunggu persetujuan klien dan menyediakan CTA email untuk mengumpulkan pengalaman nyata yang dapat diverifikasi.",
+  },
+  {
+    row: 23,
+    status: "Selesai",
+    start: date,
+    end: date,
+    notes:
+      "Section Tim selesai dengan tiga fungsi kerja: Product & Discovery, Engineering, dan Client Experience. Nama serta foto tidak direka dan siap ditambahkan setelah persetujuan tim.",
+  },
+  {
+    row: 24,
+    status: "Selesai",
+    start: date,
+    end: date,
+    notes:
+      "CTA/Kontak selesai dengan form responsif untuk nama, usaha, dan kebutuhan. Submit menyusun email konsultasi ke halo@kitalab.online, dilengkapi ekspektasi respons, lokasi Makassar, dan fallback email langsung.",
+  },
+  {
+    row: 25,
+    status: "Selesai",
+    start: date,
+    end: date,
+    notes:
+      "Footer selesai dengan positioning Kita Lab, navigasi section, email, lokasi Makassar, copyright, dan pesan brand. Layout responsif serta seluruh tautan dapat diakses dengan keyboard.",
+  },
+  {
+    row: 26,
+    status: "Selesai",
+    start: date,
+    end: date,
+    notes:
+      "SEO on-page selesai: title/description/keywords, canonical, Open Graph dan X card dengan social preview khusus, JSON-LD ProfessionalService, sitemap.xml, serta robots.txt. Route dan metadata terverifikasi 200.",
+  },
+  {
+    row: 27,
+    status: "Proses",
+    start: date,
+    end: null,
+    notes:
+      "Komponen Google Analytics 4 dan contoh NEXT_PUBLIC_GA_ID sudah tersedia. Tracking sengaja belum aktif agar tidak mengirim ID placeholder; diperlukan Measurement ID GA4 resmi di environment Hostinger lalu deploy ulang.",
+  },
 ];
 
 for (const update of updates) {
@@ -160,7 +216,7 @@ for (const update of updates) {
     [update.status, "Codex", update.start, update.end, update.notes],
   ];
 }
-sheet.getRange("K4:L20").format.numberFormat = "yyyy-mm-dd";
+sheet.getRange("K4:L27").format.numberFormat = "yyyy-mm-dd";
 
 await fs.mkdir(outputDir, { recursive: true });
 const exported = await SpreadsheetFile.exportXlsx(workbook);
@@ -168,9 +224,9 @@ await exported.save(outputPath);
 
 const check = await workbook.inspect({
   kind: "table",
-  range: "Worksheet Master!A3:M20",
+  range: "Worksheet Master!A3:M27",
   include: "values,formulas",
-  tableMaxRows: 18,
+  tableMaxRows: 25,
   tableMaxCols: 13,
   tableMaxCellChars: 220,
   maxChars: 14000,

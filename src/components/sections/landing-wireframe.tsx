@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { portfolio, products, services } from "@/data/site";
+import { ContactForm } from "@/components/contact/contact-form";
+import { portfolio, products, services, teamRoles } from "@/data/site";
 
 function Hero() {
   return (
@@ -279,29 +280,40 @@ function Portfolio() {
       <Container>
         <SectionHeading
           eyebrow="Portofolio"
-          title="Bukti kerja akan berbicara lebih jelas."
-          description="Konten project asli masih disiapkan. Struktur berikut menjadi wireframe untuk tiga studi kasus utama."
+          title="Gambaran solusi yang kami bangun."
+          description="Materi klien resmi belum tersedia. Tiga tampilan berikut adalah konsep kapabilitas, bukan klaim project atau hasil klien."
         />
         <div className="mt-12 grid gap-5 lg:grid-cols-3">
           {portfolio.map((item, index) => (
-            <article key={item}>
+            <article className="group" key={item.title}>
               <div
                 className={`aspect-[4/3] rounded-[1.75rem] p-5 ${
-                  index === 1 ? "bg-brand-accent" : "bg-brand-navy"
+                  item.accent === "orange" ? "bg-brand-accent" : "bg-brand-navy"
                 }`}
               >
-                <div className="flex h-full flex-col justify-between rounded-2xl border border-white/15 bg-white/8 p-5">
+                <div className="flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/15 bg-white/8 p-5">
                   <span className="text-xs font-bold uppercase tracking-widest text-white/55">
-                    Case study 0{index + 1}
+                    Konsep 0{index + 1} · {item.category}
                   </span>
-                  <div className="space-y-2">
-                    <div className="h-2 w-2/3 rounded-full bg-white/75" />
-                    <div className="h-2 w-1/2 rounded-full bg-white/25" />
+                  <div className="grid grid-cols-[.7fr_1.3fr] gap-3 transition duration-300 group-hover:-translate-y-1">
+                    <div className="space-y-2 rounded-xl bg-white/10 p-3">
+                      <div className="h-2 w-2/3 rounded bg-white/70" />
+                      <div className="h-2 w-full rounded bg-white/20" />
+                      <div className="h-16 rounded-lg bg-white/10" />
+                    </div>
+                    <div className="grid grid-cols-2 gap-2">
+                      <div className="rounded-xl bg-white/15" />
+                      <div className="rounded-xl bg-white/25" />
+                      <div className="col-span-2 rounded-xl bg-white/10" />
+                    </div>
                   </div>
                 </div>
               </div>
-              <h3 className="mt-5 text-lg font-extrabold text-brand-navy">{item}</h3>
-              <p className="mt-2 text-sm text-brand-muted">Materi project sedang disiapkan.</p>
+              <p className="mt-5 text-xs font-black uppercase tracking-wider text-brand-accent-strong">
+                {item.outcome}
+              </p>
+              <h3 className="mt-2 text-xl font-extrabold text-brand-navy">{item.title}</h3>
+              <p className="mt-3 text-sm leading-6 text-brand-muted">{item.description}</p>
             </article>
           ))}
         </div>
@@ -312,41 +324,56 @@ function Portfolio() {
 
 function TrustAndTeam() {
   return (
-    <section className="section-space bg-white">
-      <Container className="grid gap-6 lg:grid-cols-[1.2fr_.8fr]">
-        <Card className="bg-brand-navy p-8 text-white sm:p-10">
-          <span className="text-6xl font-black leading-none text-brand-accent">“</span>
-          <blockquote className="mt-3 text-balance text-2xl font-bold leading-snug sm:text-3xl">
-            Ruang testimoni disiapkan untuk cerita nyata tentang perubahan bisnis,
-            bukan pujian generik.
-          </blockquote>
-          <p className="mt-8 text-sm text-white/55">
-            Nama klien · Nama usaha · Makassar
-          </p>
-        </Card>
-        <Card className="flex flex-col justify-between bg-brand-accent-soft p-8 sm:p-10">
-          <div>
+    <section className="section-space bg-white" id="tim">
+      <Container>
+        <div className="grid gap-6 lg:grid-cols-[.8fr_1.2fr]">
+          <Card className="bg-brand-accent-soft p-8 sm:p-10">
             <span className="text-xs font-black uppercase tracking-[0.16em] text-brand-accent-strong">
-              Tim Kita Lab
+              Testimoni
             </span>
             <h3 className="mt-5 text-3xl font-extrabold tracking-[-0.04em] text-brand-navy">
-              Orang lokal, komunikasi personal.
+              Cerita klien harus nyata.
             </h3>
             <p className="mt-4 leading-7 text-brand-muted">
-              Foto dan profil tim akan ditempatkan di sini bila section tim disetujui.
+              Kami belum mempublikasikan kutipan sebelum mendapat persetujuan klien.
+              Ruang ini disiapkan untuk hasil terukur, nama usaha, dan konteks project
+              yang dapat diverifikasi.
+            </p>
+            <div className="mt-8 rounded-2xl border border-brand-accent/25 bg-white/70 p-5">
+              <p className="text-sm font-bold text-brand-navy">
+                Pernah bekerja bersama Kita Lab?
+              </p>
+              <a
+                className="mt-2 inline-block text-sm font-bold text-brand-accent-strong"
+                href="mailto:halo@kitalab.online?subject=Testimoni%20untuk%20Kita%20Lab"
+              >
+                Bagikan pengalamanmu →
+              </a>
+            </div>
+          </Card>
+          <div className="rounded-[2rem] bg-brand-navy p-8 text-white sm:p-10">
+            <span className="text-xs font-black uppercase tracking-[0.16em] text-brand-accent">
+              Tim Kita Lab
+            </span>
+            <h3 className="mt-5 max-w-xl text-3xl font-extrabold tracking-[-0.04em] sm:text-4xl">
+              Tim kecil, kolaborasi dekat, tanggung jawab jelas.
+            </h3>
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              {teamRoles.map((member) => (
+                <article className="rounded-2xl border border-white/10 bg-white/8 p-5" key={member.role}>
+                  <span className="grid size-11 place-items-center rounded-xl bg-brand-accent text-xs font-black text-brand-navy">
+                    {member.initials}
+                  </span>
+                  <h4 className="mt-5 font-extrabold">{member.role}</h4>
+                  <p className="mt-2 text-sm leading-6 text-white/55">{member.description}</p>
+                </article>
+              ))}
+            </div>
+            <p className="mt-6 text-xs text-white/40">
+              Nama dan foto personal akan ditambahkan setelah persetujuan tim.
             </p>
           </div>
-          <div className="mt-10 flex -space-x-3">
-            {[1, 2, 3].map((item) => (
-              <span
-                className="grid size-12 place-items-center rounded-full border-4 border-brand-accent-soft bg-brand-navy text-xs font-bold text-white"
-                key={item}
-              >
-                KL
-              </span>
-            ))}
-          </div>
-        </Card>
+        </div>
       </Container>
     </section>
   );
@@ -355,26 +382,30 @@ function TrustAndTeam() {
 function Contact() {
   return (
     <section className="bg-brand-navy py-20 text-white sm:py-24" id="kontak">
-      <Container className="text-center">
-        <span className="inline-flex rounded-full bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-brand-accent-soft">
-          Mari mulai
-        </span>
-        <h2 className="mx-auto mt-6 max-w-3xl text-balance text-4xl font-black tracking-[-0.05em] sm:text-5xl lg:text-6xl">
-          Punya masalah bisnis yang ingin dibuat lebih sederhana?
-        </h2>
-        <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white/65">
-          Ceritakan dulu. Kita bantu petakan solusi digital yang paling masuk akal
-          untuk langkah berikutnya.
-        </p>
-        <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-          <Button href="mailto:halo@kitalab.id">Mulai Konsultasi →</Button>
-          <Button
-            className="border-white/15 bg-white/8 text-white hover:bg-white/12"
-            href="mailto:halo@kitalab.id"
-            variant="secondary"
-          >
-            halo@kitalab.id
-          </Button>
+      <Container className="grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-start">
+        <div>
+          <span className="inline-flex rounded-full bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-brand-accent-soft">
+            Konsultasi awal gratis
+          </span>
+          <h2 className="mt-6 text-balance text-4xl font-black tracking-[-0.05em] sm:text-5xl">
+            Mari sederhanakan satu masalah bisnis dulu.
+          </h2>
+          <p className="mt-6 max-w-xl text-lg leading-8 text-white/65">
+            Ceritakan proses yang terasa lambat, berulang, atau sulit dipantau.
+            Kami bantu petakan langkah digital yang paling masuk akal.
+          </p>
+          <div className="mt-8 space-y-3 text-sm text-white/60">
+            <p>✓ Balasan awal maksimal 1 hari kerja</p>
+            <p>✓ Diskusi tanpa jargon teknis</p>
+            <p>✓ Rekomendasi sesuai tahap bisnis</p>
+          </div>
+          <a className="mt-8 inline-block font-bold text-brand-accent" href="mailto:halo@kitalab.online">
+            halo@kitalab.online
+          </a>
+          <p className="mt-2 text-sm text-white/45">Makassar, Sulawesi Selatan</p>
+        </div>
+        <div className="rounded-[2rem] border border-white/10 bg-white/6 p-6 sm:p-8">
+          <ContactForm />
         </div>
       </Container>
     </section>
