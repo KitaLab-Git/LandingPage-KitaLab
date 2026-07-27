@@ -344,7 +344,7 @@ function TrustAndTeam() {
                 Pernah bekerja bersama Kita Lab?
               </p>
               <a
-                className="mt-2 inline-block text-sm font-bold text-brand-accent-strong"
+                className="mt-2 inline-flex min-h-11 items-center text-sm font-bold text-brand-accent-strong"
                 href="mailto:halo@kitalab.online?subject=Testimoni%20untuk%20Kita%20Lab"
               >
                 Bagikan pengalamanmu →
@@ -399,7 +399,7 @@ function Contact() {
             <p>✓ Diskusi tanpa jargon teknis</p>
             <p>✓ Rekomendasi sesuai tahap bisnis</p>
           </div>
-          <a className="mt-8 inline-block font-bold text-brand-accent" href="mailto:halo@kitalab.online">
+          <a className="mt-8 inline-flex min-h-11 items-center font-bold text-brand-accent" href="mailto:halo@kitalab.online">
             halo@kitalab.online
           </a>
           <p className="mt-2 text-sm text-white/45">Makassar, Sulawesi Selatan</p>

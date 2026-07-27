@@ -215,7 +215,7 @@ const updates = [
     start: date,
     end: date,
     notes:
-      "Responsive design seluruh route disempurnakan untuk layar kecil, tablet, dan desktop: skala heading adaptif, CTA mobile penuh, mockup aman dari overflow, checkout/footer fleksibel, target sentuh 44–48 px, skip navigation, serta focus indicator keyboard.",
+      "Responsive design seluruh route disempurnakan untuk layar kecil, tablet, dan desktop. Audit browser pada HP 390x844 dan tablet 768x1024 memastikan tidak ada horizontal overflow. CTA desktop disembunyikan pada HP; heading, mockup, checkout, dan footer fleksibel; seluruh target sentuh utama 44–48 px.",
   },
   {
     row: 29,

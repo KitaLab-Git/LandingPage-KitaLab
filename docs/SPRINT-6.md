@@ -9,6 +9,9 @@
 - Semua route memiliki target `main-content` untuk skip navigation.
 - Focus indicator terlihat untuk link, tombol, input, textarea, dan menu mobile.
 - Target interaksi utama memiliki tinggi minimum 44–48 px.
+- Audit browser pada viewport HP 390×844 dan tablet 768×1024 memastikan
+  tidak ada horizontal overflow; CTA header desktop disembunyikan pada HP agar
+  logo dan menu tidak berhimpitan.
 
 ## Performance
 

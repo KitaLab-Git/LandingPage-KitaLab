@@ -8,7 +8,7 @@ export function SiteHeader() {
       <Container className="flex h-18 items-center justify-between">
         <a
           aria-label="Kita Lab - kembali ke atas"
-          className="text-xl font-black tracking-[-0.05em] text-brand-navy"
+          className="inline-flex min-h-11 items-center text-xl font-black tracking-[-0.05em] text-brand-navy"
           href="#home"
         >
           Kita<span className="text-brand-accent">Lab.</span>
@@ -24,9 +24,11 @@ export function SiteHeader() {
             </a>
           ))}
         </nav>
-        <Button className="hidden min-h-10 px-5 sm:inline-flex" href="#kontak">
-          Konsultasi Gratis
-        </Button>
+        <div className="hidden sm:block">
+          <Button className="min-h-11 px-5" href="#kontak">
+            Konsultasi Gratis
+          </Button>
+        </div>
         <details className="mobile-menu relative lg:hidden">
           <summary
             aria-label="Buka navigasi"
