@@ -9,7 +9,7 @@ const sourcePath = path.join(
   "documents",
   "Worksheet_Master_KitaLab.xlsx",
 );
-const outputDir = path.join(projectRoot, "outputs", "wm-sprint-1");
+const outputDir = path.join(projectRoot, "outputs", "wm-sprint-2");
 const outputPath = path.join(outputDir, "Worksheet_Master_KitaLab.xlsx");
 
 const workbook = await SpreadsheetFile.importXlsx(await FileBlob.load(sourcePath));
@@ -73,6 +73,38 @@ const updates = [
     notes:
       "Sistem komponen reusable dibuat: Button, Container, Card, SectionHeading, SiteHeader, LandingWireframe, dan SiteFooter. Konten statis dipisahkan ke src/data/site.ts. ESLint, TypeScript, dan production build lulus.",
   },
+  {
+    row: 11,
+    status: "Selesai",
+    start: date,
+    end: date,
+    notes:
+      "Navbar sticky selesai dengan menu Home, Layanan, Product, Portofolio, Tentang Kami, dan Kontak. CTA Konsultasi Gratis tersedia di desktop serta menu mobile yang aksesibel dan responsif.",
+  },
+  {
+    row: 12,
+    status: "Selesai",
+    start: date,
+    end: date,
+    notes:
+      "Hero production-ready selesai: positioning untuk UMKM, headline dan subheadline berbasis manfaat, dua CTA, tiga trust point, serta visual dashboard responsif. Pesan menegaskan pendampingan dari ide hingga digunakan tim.",
+  },
+  {
+    row: 13,
+    status: "Selesai",
+    start: date,
+    end: date,
+    notes:
+      "Section Tentang Kita Lab selesai dengan konteks tim lokal Makassar, positioning solusi bisnis, nilai komunikasi dekat dan solusi realistis, serta alur kerja Dengarkan–Rancang–Dampingi.",
+  },
+  {
+    row: 14,
+    status: "Selesai",
+    start: date,
+    end: date,
+    notes:
+      "Section Layanan selesai dengan tiga kategori: Website Bisnis, Aplikasi Custom, dan Tools Siap Pakai. Setiap kartu memuat deskripsi dan deliverable konkret, dilengkapi CTA diskusi kebutuhan. ESLint dan production build lulus.",
+  },
 ];
 
 for (const update of updates) {
@@ -80,7 +112,7 @@ for (const update of updates) {
     [update.status, "Codex", update.start, update.end, update.notes],
   ];
 }
-sheet.getRange("K4:L10").format.numberFormat = "yyyy-mm-dd";
+sheet.getRange("K4:L14").format.numberFormat = "yyyy-mm-dd";
 
 await fs.mkdir(outputDir, { recursive: true });
 const exported = await SpreadsheetFile.exportXlsx(workbook);
@@ -88,9 +120,9 @@ await exported.save(outputPath);
 
 const check = await workbook.inspect({
   kind: "table",
-  range: "Worksheet Master!A3:M10",
+  range: "Worksheet Master!A3:M14",
   include: "values,formulas",
-  tableMaxRows: 8,
+  tableMaxRows: 12,
   tableMaxCols: 13,
   tableMaxCellChars: 220,
   maxChars: 14000,

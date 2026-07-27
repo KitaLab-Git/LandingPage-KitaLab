@@ -13,18 +13,21 @@ export const services = [
     title: "Website Bisnis",
     description:
       "Website cepat dan meyakinkan untuk memperkuat kehadiran bisnis di dunia digital.",
+    deliverables: ["Landing page & company profile", "Responsif dan siap SEO"],
   },
   {
     number: "02",
     title: "Aplikasi Custom",
     description:
       "Sistem yang dirancang mengikuti alur kerja bisnis, bukan memaksa bisnis mengikuti aplikasi.",
+    deliverables: ["Dashboard operasional", "Otomasi alur kerja"],
   },
   {
     number: "03",
     title: "Tools Siap Pakai",
     description:
       "Produk digital berlangganan yang praktis, terjangkau, dan bisa langsung digunakan.",
+    deliverables: ["Setup lebih singkat", "Pendampingan penggunaan"],
   },
 ];
 

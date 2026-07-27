@@ -23,7 +23,8 @@ function Hero() {
           </h1>
           <p className="mt-7 max-w-xl text-pretty text-lg leading-8 text-white/70">
             Kita Lab membantu UMKM membangun website, aplikasi, dan tools siap
-            pakai—dengan komunikasi yang dekat dan bahasa yang mudah dipahami.
+            pakai—dari ide sampai benar-benar dipakai timmu, dengan komunikasi
+            yang dekat dan bahasa yang mudah dipahami.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Button href="#kontak">Ceritakan Kebutuhanmu →</Button>
@@ -133,6 +134,16 @@ function About() {
               </p>
             </div>
           </div>
+          <div className="mt-9 rounded-2xl border border-brand-line bg-brand-canvas p-5">
+            <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-accent-strong">
+              Cara kami bekerja
+            </p>
+            <div className="mt-4 grid gap-3 text-sm font-bold text-brand-navy sm:grid-cols-3">
+              <span>01 · Dengarkan</span>
+              <span>02 · Rancang</span>
+              <span>03 · Dampingi</span>
+            </div>
+          </div>
         </div>
       </Container>
     </section>
@@ -164,8 +175,30 @@ function Services() {
                 {service.title}
               </h3>
               <p className="mt-4 leading-7 text-brand-muted">{service.description}</p>
+              <ul className="mt-6 space-y-2 border-t border-brand-line pt-5">
+                {service.deliverables.map((deliverable) => (
+                  <li
+                    className="flex items-center gap-2 text-sm font-semibold text-brand-navy"
+                    key={deliverable}
+                  >
+                    <span className="size-1.5 rounded-full bg-brand-accent" />
+                    {deliverable}
+                  </li>
+                ))}
+              </ul>
             </Card>
           ))}
+        </div>
+        <div className="mt-8 flex flex-col items-start justify-between gap-5 rounded-3xl bg-brand-navy px-7 py-6 text-white sm:flex-row sm:items-center">
+          <div>
+            <p className="font-extrabold">Belum yakin layanan mana yang cocok?</p>
+            <p className="mt-1 text-sm text-white/60">
+              Ceritakan tantangan bisnismu, kami bantu petakan langkah pertamanya.
+            </p>
+          </div>
+          <Button className="shrink-0" href="#kontak">
+            Diskusi Kebutuhan →
+          </Button>
         </div>
       </Container>
     </section>

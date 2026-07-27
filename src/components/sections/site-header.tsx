@@ -24,9 +24,36 @@ export function SiteHeader() {
             </a>
           ))}
         </nav>
-        <Button className="min-h-10 px-5" href="#kontak">
+        <Button className="hidden min-h-10 px-5 sm:inline-flex" href="#kontak">
           Konsultasi Gratis
         </Button>
+        <details className="mobile-menu relative lg:hidden">
+          <summary
+            aria-label="Buka navigasi"
+            className="grid size-11 cursor-pointer list-none place-items-center rounded-xl border border-brand-line bg-white text-brand-navy"
+          >
+            <span aria-hidden="true" className="text-xl leading-none">
+              ☰
+            </span>
+          </summary>
+          <nav
+            aria-label="Navigasi mobile"
+            className="absolute right-0 top-14 w-[min(19rem,calc(100vw-2rem))] rounded-2xl border border-brand-line bg-white p-3 shadow-2xl"
+          >
+            {navigation.map((item) => (
+              <a
+                className="block rounded-xl px-4 py-3 text-sm font-bold text-brand-muted transition hover:bg-brand-canvas hover:text-brand-navy"
+                href={item.href}
+                key={item.href}
+              >
+                {item.label}
+              </a>
+            ))}
+            <Button className="mt-2 w-full" href="#kontak">
+              Konsultasi Gratis
+            </Button>
+          </nav>
+        </details>
       </Container>
     </header>
   );
