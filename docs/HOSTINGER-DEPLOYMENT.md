@@ -2,6 +2,8 @@
 
 Target: Hostinger Node.js Web App dengan automatic deployment dari GitHub.
 
+Status: live di `https://kitalab.online/`.
+
 ## Prasyarat paket
 
 Gunakan Business Web Hosting atau paket Cloud yang mendukung Node.js Web App. Untuk VPS, prosedurnya berbeda karena Node.js dan process manager harus dikelola manual.
@@ -33,8 +35,10 @@ Hostinger dapat mendeteksi Next.js secara otomatis. Jangan memilih output static
 
 ## Verifikasi
 
-- Landing page dapat dibuka melalui HTTPS.
+- Landing page dapat dibuka melalui HTTPS dengan respons `200 OK`.
 - Navbar, hero, seluruh section, dan footer tampil.
 - Refresh pada route utama tidak menghasilkan 404/403.
 - Deployment terakhir menunjuk commit terbaru di branch `main`.
 - Push berikutnya ke `main` memicu build dan redeployment.
+
+Deployment pertama yang berhasil menggunakan commit `b31e987` dengan pnpm 11.17.0, Node.js 22.x, dan allowlist build dependency native di `pnpm-workspace.yaml`.

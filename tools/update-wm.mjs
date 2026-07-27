@@ -35,11 +35,11 @@ const updates = [
   },
   {
     row: 6,
-    status: "Proses",
+    status: "Selesai",
     start: date,
-    end: null,
+    end: date,
     notes:
-      "Proyek sudah deployment-ready untuk Hostinger Node.js Web App dan repository GitHub sudah terhubung. Runtime Node.js 22.x, pnpm, build/start command, dan panduan hPanel disiapkan. Koneksi repository di hPanel serta URL live memerlukan otorisasi akun hosting user.",
+      "Deployment Hostinger Node.js Web App selesai. Repository GitHub branch main terhubung dengan auto-deploy; runtime Node.js 22.x dan pnpm 11.17.0. Build Next.js/TypeScript berhasil dan situs HTTPS https://kitalab.online/ terverifikasi 200 OK pada 27 Juli 2026.",
   },
   {
     row: 7,

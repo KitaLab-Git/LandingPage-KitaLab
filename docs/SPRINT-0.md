@@ -47,11 +47,11 @@ Repository sudah deployment-ready untuk Hostinger. Langkah eksternal yang masih 
 3. Pilih Next.js, Node.js 22.x, pnpm, build command `pnpm build`, dan start command `pnpm start`.
 4. Aktifkan automatic redeployment dari branch `main`.
 
-Detail pengaturan tersedia di `docs/HOSTINGER-DEPLOYMENT.md`.
+Deployment aktif di `https://kitalab.online/`. Detail pengaturan tersedia di `docs/HOSTINGER-DEPLOYMENT.md`.
 
 ## Handoff untuk Worksheet Master
 
 - Task 1: selesai — stack dipilih dan terdokumentasi.
 - Task 2: selesai — proyek dan struktur folder dibuat.
-- Task 3: proses — konfigurasi lokal siap, tetapi koneksi repository ke hPanel Hostinger memerlukan akun user.
+- Task 3: selesai — Hostinger terhubung ke branch `main`, build berhasil, dan situs live di `https://kitalab.online/`.
 - Task 4: proses — token branding baseline sudah diterapkan; logo dan approval final palet/tone masih memerlukan keputusan tim Kita Lab.
