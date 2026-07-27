@@ -211,12 +211,12 @@ function Products() {
       <Container>
         <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <SectionHeading
-            description="Alternatif praktis untuk UMKM yang ingin langsung jalan tanpa membangun sistem dari awal."
+            description="Dua tools berlangganan untuk kebutuhan operasional UMKM. Harga berikut dipakai untuk validasi pasar sebelum peluncuran komersial."
             eyebrow="Digital Product"
-            title="Tools sederhana. Dampak terasa."
+            title="Mulai praktis, bertumbuh tanpa ribet."
           />
-          <p className="rounded-2xl border border-brand-line bg-brand-canvas px-5 py-3 text-sm font-semibold text-brand-muted">
-            Harga dan fitur final menunggu keputusan produk
+          <p className="rounded-2xl border border-brand-accent/30 bg-brand-accent-soft px-5 py-3 text-sm font-semibold text-brand-accent-strong">
+            Checkout saat ini berjalan dalam mode sandbox
           </p>
         </div>
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -241,6 +241,7 @@ function Products() {
                   }`}
                 >
                   {product.price}
+                  <small className="ml-1 text-xs font-bold opacity-60">{product.period}</small>
                 </span>
               </div>
               <h3
@@ -253,12 +254,16 @@ function Products() {
               <p className={`mt-3 ${index === 0 ? "text-white/65" : "text-brand-muted"}`}>
                 {product.description}
               </p>
-              <Button
-                className="mt-8"
-                href="#kontak"
-                variant={index === 0 ? "primary" : "secondary"}
-              >
-                Ikuti Kabar Produk
+              <ul className={`mt-6 space-y-2 text-sm ${index === 0 ? "text-white/70" : "text-brand-muted"}`}>
+                {product.features.slice(0, 3).map((feature) => (
+                  <li className="flex gap-2" key={feature}>
+                    <span className="text-brand-accent">✓</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <Button className="mt-8" href={`/product/${product.slug}`} variant={index === 0 ? "primary" : "secondary"}>
+                Coba Gratis {product.trial} →
               </Button>
             </Card>
           ))}

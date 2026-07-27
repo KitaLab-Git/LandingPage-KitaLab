@@ -9,7 +9,7 @@ const sourcePath = path.join(
   "documents",
   "Worksheet_Master_KitaLab.xlsx",
 );
-const outputDir = path.join(projectRoot, "outputs", "wm-sprint-2");
+const outputDir = path.join(projectRoot, "outputs", "wm-sprint-3");
 const outputPath = path.join(outputDir, "Worksheet_Master_KitaLab.xlsx");
 
 const workbook = await SpreadsheetFile.importXlsx(await FileBlob.load(sourcePath));
@@ -105,6 +105,54 @@ const updates = [
     notes:
       "Section Layanan selesai dengan tiga kategori: Website Bisnis, Aplikasi Custom, dan Tools Siap Pakai. Setiap kartu memuat deskripsi dan deliverable konkret, dilengkapi CTA diskusi kebutuhan. ESLint dan production build lulus.",
   },
+  {
+    row: 15,
+    status: "Selesai",
+    start: date,
+    end: date,
+    notes:
+      "Katalog validasi ditetapkan: Kita Kasir Rp79.000/bulan dan Kita Stok Rp99.000/bulan, masing-masing trial 14 hari, deskripsi, dan empat fitur. Data terdokumentasi terpusat di src/data/site.ts; harga ditandai belum final.",
+  },
+  {
+    row: 16,
+    status: "Selesai",
+    start: date,
+    end: date,
+    notes:
+      "UI Product pada landing page selesai: dua kartu produk responsif menampilkan label sandbox, harga per bulan, fitur utama, trial, dan CTA ke halaman detail produk.",
+  },
+  {
+    row: 17,
+    status: "Selesai",
+    start: date,
+    end: date,
+    notes:
+      "Halaman detail dan checkout dibuat untuk /product/kita-kasir, /product/kita-stok, serta /checkout/[slug]. Checkout mengumpulkan nama, usaha, dan email sebelum membuat transaksi sandbox.",
+  },
+  {
+    row: 18,
+    status: "Selesai",
+    start: date,
+    end: date,
+    notes:
+      "Payment gateway diintegrasikan dalam mode sandbox melalui POST /api/checkout. API memvalidasi produk dan data pelanggan, membuat transaction ID unik, lalu mengarahkan pengguna ke halaman status pending tanpa menagihkan uang.",
+  },
+  {
+    row: 19,
+    status: "Selesai",
+    start: date,
+    end: date,
+    notes:
+      "Callback sandbox POST /api/payment/callback selesai. Event success mengubah entitlement simulasi menjadi active; event failed mempertahankan inactive. Adapter siap diganti provider resmi setelah kredensial dan database tersedia.",
+  },
+  {
+    row: 20,
+    status: "Selesai",
+    start: date,
+    end: date,
+    notes:
+      "Halaman status transaksi selesai untuk pending, success, dan failed, termasuk aksi simulasi callback serta langkah berikutnya. E2E lokal terverifikasi: halaman 200, checkout pending, callback success, dan access active.",
+  },
 ];
 
 for (const update of updates) {
@@ -112,7 +160,7 @@ for (const update of updates) {
     [update.status, "Codex", update.start, update.end, update.notes],
   ];
 }
-sheet.getRange("K4:L14").format.numberFormat = "yyyy-mm-dd";
+sheet.getRange("K4:L20").format.numberFormat = "yyyy-mm-dd";
 
 await fs.mkdir(outputDir, { recursive: true });
 const exported = await SpreadsheetFile.exportXlsx(workbook);
@@ -120,9 +168,9 @@ await exported.save(outputPath);
 
 const check = await workbook.inspect({
   kind: "table",
-  range: "Worksheet Master!A3:M14",
+  range: "Worksheet Master!A3:M20",
   include: "values,formulas",
-  tableMaxRows: 12,
+  tableMaxRows: 18,
   tableMaxCols: 13,
   tableMaxCellChars: 220,
   maxChars: 14000,

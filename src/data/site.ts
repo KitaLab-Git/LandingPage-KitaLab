@@ -33,18 +33,42 @@ export const services = [
 
 export const products = [
   {
-    label: "Segera hadir",
+    slug: "kita-kasir",
+    label: "Sandbox tersedia",
     name: "Kita Kasir",
-    description: "Pencatatan penjualan sederhana untuk usaha harian.",
-    price: "Rp—",
+    description:
+      "Pencatatan penjualan harian, ringkasan omzet, dan produk terlaris dalam satu ruang kerja.",
+    price: "Rp79.000",
+    period: "/bulan",
+    trial: "14 hari",
+    features: [
+      "Pencatatan transaksi tanpa batas",
+      "Ringkasan omzet dan produk terlaris",
+      "Ekspor laporan bulanan",
+      "Dukungan onboarding via WhatsApp",
+    ],
   },
   {
-    label: "Segera hadir",
+    slug: "kita-stok",
+    label: "Sandbox tersedia",
     name: "Kita Stok",
-    description: "Pantau stok dan barang masuk-keluar tanpa spreadsheet rumit.",
-    price: "Rp—",
+    description:
+      "Pantau stok dan barang masuk-keluar tanpa spreadsheet rumit atau pencatatan berulang.",
+    price: "Rp99.000",
+    period: "/bulan",
+    trial: "14 hari",
+    features: [
+      "Stok masuk, keluar, dan penyesuaian",
+      "Notifikasi stok menipis",
+      "Riwayat pergerakan barang",
+      "Ekspor laporan persediaan",
+    ],
   },
 ];
+
+export function getProduct(slug: string) {
+  return products.find((product) => product.slug === slug);
+}
 
 export const portfolio = [
   "Sistem operasional UMKM",
