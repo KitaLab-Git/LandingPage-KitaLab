@@ -17,6 +17,7 @@ Gunakan Business Web Hosting atau paket Cloud yang mendukung Node.js Web App. Un
 - Build command: `pnpm build`
 - Start command: `pnpm start`
 - Environment variables: belum ada pada fase landing page ini
+- Build-script allowlist: `sharp` dan `unrs-resolver` melalui `pnpm.onlyBuiltDependencies`
 
 Hostinger dapat mendeteksi Next.js secara otomatis. Jangan memilih output static karena project disiapkan sebagai aplikasi Next.js Node.js dan dapat berkembang ke route checkout/server pada sprint berikutnya.
 

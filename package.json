@@ -6,6 +6,12 @@
     "node": "22.x"
   },
   "packageManager": "pnpm@11.17.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "unrs-resolver"
+    ]
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
