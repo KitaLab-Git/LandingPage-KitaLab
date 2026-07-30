@@ -31,42 +31,35 @@ export const services = [
   },
 ];
 
-export const products = [
-  {
-    slug: "kita-kasir",
-    label: "Sandbox tersedia",
-    name: "Kita Kasir",
-    description:
-      "Pencatatan penjualan harian, ringkasan omzet, dan produk terlaris dalam satu ruang kerja.",
-    price: "Rp79.000",
-    period: "/bulan",
-    trial: "14 hari",
-    features: [
-      "Pencatatan transaksi tanpa batas",
-      "Ringkasan omzet dan produk terlaris",
-      "Ekspor laporan bulanan",
-      "Dukungan onboarding via WhatsApp",
-    ],
-  },
-  {
-    slug: "kita-stok",
-    label: "Sandbox tersedia",
-    name: "Kita Stok",
-    description:
-      "Pantau stok dan barang masuk-keluar tanpa spreadsheet rumit atau pencatatan berulang.",
-    price: "Rp99.000",
-    period: "/bulan",
-    trial: "14 hari",
-    features: [
-      "Stok masuk, keluar, dan penyesuaian",
-      "Notifikasi stok menipis",
-      "Riwayat pergerakan barang",
-      "Ekspor laporan persediaan",
-    ],
-  },
-];
+type SubscriptionProduct = {
+  slug: string;
+  label: string;
+  name: string;
+  description: string;
+  price: string;
+  period: string;
+  trial: string;
+  features: string[];
+};
 
-export const externalProducts = [
+// Produk sandbox lama dinonaktifkan sampai detail dan penawarannya benar-benar siap.
+export const products: SubscriptionProduct[] = [];
+
+export const activeProducts = [
+  {
+    label: "Tersedia sekarang",
+    name: "KitaPOS",
+    description:
+      "Aplikasi point of sale untuk membantu bisnis mencatat transaksi dan menjalankan operasional penjualan dengan lebih praktis.",
+    href: "https://pos.hrvd.store",
+    cta: "Buka KitaPOS",
+    monogram: "POS",
+    features: [
+      "Pencatatan transaksi penjualan",
+      "Operasional kasir yang lebih terstruktur",
+      "Dapat langsung digunakan secara online",
+    ],
+  },
   {
     label: "Tersedia sekarang",
     name: "HPPta",
@@ -74,6 +67,7 @@ export const externalProducts = [
       "Hitung Harga Pokok Produksi dengan lebih praktis agar penentuan biaya dan harga jual bisnis lebih terarah.",
     href: "https://hpp.kitalab.online",
     cta: "Buka HPPta",
+    monogram: "HPP",
     features: [
       "Perhitungan HPP yang lebih terstruktur",
       "Membantu menentukan harga jual",
