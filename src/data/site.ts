@@ -66,6 +66,22 @@ export const products = [
   },
 ];
 
+export const externalProducts = [
+  {
+    label: "Tersedia sekarang",
+    name: "HPPta",
+    description:
+      "Hitung Harga Pokok Produksi dengan lebih praktis agar penentuan biaya dan harga jual bisnis lebih terarah.",
+    href: "https://hppta.kitalab.online",
+    cta: "Buka HPPta",
+    features: [
+      "Perhitungan HPP yang lebih terstruktur",
+      "Membantu menentukan harga jual",
+      "Dapat langsung digunakan secara online",
+    ],
+  },
+];
+
 export function getProduct(slug: string) {
   return products.find((product) => product.slug === slug);
 }

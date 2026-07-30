@@ -3,7 +3,13 @@ import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ContactForm } from "@/components/contact/contact-form";
-import { portfolio, products, services, teamRoles } from "@/data/site";
+import {
+  externalProducts,
+  portfolio,
+  products,
+  services,
+  teamRoles,
+} from "@/data/site";
 
 function Hero() {
   return (
@@ -212,7 +218,7 @@ function Products() {
       <Container>
         <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <SectionHeading
-            description="Dua tools berlangganan untuk kebutuhan operasional UMKM. Harga berikut dipakai untuk validasi pasar sebelum peluncuran komersial."
+            description="Tools digital untuk membantu operasional dan pengambilan keputusan UMKM, mulai dari penjualan dan stok hingga perhitungan Harga Pokok Produksi."
             eyebrow="Digital Product"
             title="Mulai praktis, bertumbuh tanpa ribet."
           />
@@ -220,7 +226,7 @@ function Products() {
             Checkout saat ini berjalan dalam mode sandbox
           </p>
         </div>
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {products.map((product, index) => (
             <Card
               className={index === 0 ? "border-brand-blue/30 bg-brand-navy text-white" : ""}
@@ -265,6 +271,42 @@ function Products() {
               </ul>
               <Button className="mt-8 w-full sm:w-auto" href={`/product/${product.slug}`} variant={index === 0 ? "primary" : "secondary"}>
                 Coba Gratis {product.trial} →
+              </Button>
+            </Card>
+          ))}
+          {externalProducts.map((product) => (
+            <Card className="flex flex-col" key={product.name}>
+              <div className="flex items-start justify-between gap-4">
+                <span className="rounded-full bg-brand-accent-soft px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-brand-accent-strong">
+                  {product.label}
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="grid size-11 shrink-0 place-items-center rounded-2xl bg-brand-navy text-xl font-black text-brand-accent"
+                >
+                  H
+                </span>
+              </div>
+              <h3 className="mt-12 text-3xl font-extrabold tracking-[-0.04em] text-brand-navy">
+                {product.name}
+              </h3>
+              <p className="mt-3 text-brand-muted">{product.description}</p>
+              <ul className="mt-6 space-y-2 text-sm text-brand-muted">
+                {product.features.map((feature) => (
+                  <li className="flex gap-2" key={feature}>
+                    <span className="text-brand-accent">✓</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <Button
+                className="mt-8 w-full sm:w-auto"
+                href={product.href}
+                rel="noreferrer"
+                target="_blank"
+                variant="secondary"
+              >
+                {product.cta} ↗
               </Button>
             </Card>
           ))}
