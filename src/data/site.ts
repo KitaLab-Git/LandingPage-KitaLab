@@ -72,7 +72,7 @@ export const externalProducts = [
     name: "HPPta",
     description:
       "Hitung Harga Pokok Produksi dengan lebih praktis agar penentuan biaya dan harga jual bisnis lebih terarah.",
-    href: "https://hppta.kitalab.online",
+    href: "https://hpp.kitalab.online",
     cta: "Buka HPPta",
     features: [
       "Perhitungan HPP yang lebih terstruktur",
